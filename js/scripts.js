@@ -29,6 +29,11 @@ $(document).ready(function() {
     noseSize = Math.random() + 0.1;
     faceFat = Math.random();
     faceLength = Math.random();
+    mouthWidth = (Math.random()*30)-15;
+    mouthMood=(Math.random()*60)-30;
+     mouthCurl=(Math.random()*20)-10;
+     browHeight = (Math.random()*30)-15;
+     
 
     return (
       `<svg
@@ -258,6 +263,9 @@ $(document).ready(function() {
         ry="` +
       10 * eyewidthSizer +
       `" />
+      <!--brow-->
+      <path d="M50 110 C 60 100, 80 100, 90 110" stroke="black" stroke-width="1" fill="none" />
+       <path d="M100 110 C 110 100, 140 100, 140 110" stroke="black" stroke-width="1" fill="none" />
       <!--mouth-->
      <path
         style="fill:rgb(` +
@@ -266,15 +274,14 @@ $(document).ready(function() {
       colors.green[1] +
       `,` +
       colors.blue[1] +
-      `,255);stroke:#241c1c;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
-        id="path5441"
-        sodipodi:type="arc"
-        sodipodi:cx="93.738106"
-        sodipodi:cy="172.64583"
-        sodipodi:rx="30.238094"
-        sodipodi:ry="9.4494047"
-        sodipodi:start="0"
-        sodipodi:end="3.0979769"
+      `,255);stroke:rgb(` +
+      colors.red[1] +
+      `,` +
+      colors.green[1] +
+      `,` +
+      colors.blue[1] +
+      `,255);stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+        d="M`+(70+mouthWidth)+` 168 C `+(90-mouthCurl)+` `+(180-mouthMood)+`, `+(100+mouthCurl)+` `+(180-mouthMood)+`, `+(120-mouthWidth)+`  168" stroke="black" stroke-width="0" fill="red" 
         d="m 123.9762,172.64583 a 30.238094,9.4494047 0 0 1 -29.578718,9.44716 30.238094,9.4494047 0 0 1 -30.868714,-9.03515 l 30.209338,-0.41201 z" />
     <!--hair--> 
      <path
